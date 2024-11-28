@@ -9,6 +9,14 @@ pipeline {
             }
         }
 
+        stage('Remove Old Build') {
+            steps {
+                // Build your project (example using Maven)
+                sh 'rm -rf /var/lib/jenkins/jobs/Build GitHub Project/workspace/target'
+            }
+        }
+
+
         stage('Build') {
             steps {
                 // Build your project (example using Maven)
